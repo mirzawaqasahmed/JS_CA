@@ -1,0 +1,188 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;\csgray\c100000;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 version 12.2\
+no service pad\
+service timestamps debug uptime\
+service timestamps log uptime\
+no service password-encryption\
+!\
+hostname JS-CA-SWX-CORE-1\
+!\
+enable secret 5 $1$PMld$FsyKaZ8zMCYaHEH9aSo110\
+!\
+no aaa new-model\
+system mtu routing 1500\
+vtp domain Jalsa.canada\
+vtp mode transparent\
+ip subnet-zero\
+ip domain-name jalsa.canada\
+ip name-server 172.16.16.251\
+ip name-server 172.16.16.252\
+!\
+!\
+!\
+!\
+no file verify auto\
+spanning-tree mode pvst\
+spanning-tree extend system-id\
+!\
+vlan internal allocation policy ascending\
+!\
+vlan 10\
+ name prod_jalsa\
+!\
+vlan 15,115,215\
+!\
+interface GigabitEthernet0/1\
+ description *** Internet Firewall ***\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/2\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/3\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/4\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/5\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/6\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/7\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/8\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/9\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/10\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/11\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/12\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/13\
+ description *** Internal Servers ***\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/14\
+ description *** Internal Servers ***\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/15\
+ description *** Internal Servers ***\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/16\
+ description *** Internal Servers ***\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/17\
+ description *** Internal Servers ***\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/18\
+ description *** Internal Servers ***\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/19\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/20\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/21\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/22\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/23\
+ description *** IC Internal Downlink ***\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/24\
+ description *** Internet Uplink ***\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/25\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/26\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/27\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface GigabitEthernet0/28\
+ switchport access vlan 10\
+ switchport mode access\
+!\
+interface Vlan1\
+ no ip address\
+ shutdown\
+!\
+interface Vlan10\
+ ip address 172.16.16.2 255.255.255.0\
+!\
+ip classless\
+ip http server\
+!\
+!\
+control-plane\
+!\
+!\
+line con 0\
+ password m15510n.10610\
+ login\
+line vty 0 4\
+ password m15510n.10610\
+ login\
+line vty 5 15\
+ password m15510n.10610\
+ login\
+!\
+end\
+\
+}
